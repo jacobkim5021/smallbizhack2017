@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-
   get 'sessions/new'
-  
+
   root 'application#hello'
 
   get    '/signup',  to: 'users#new'
@@ -11,6 +10,5 @@ Rails.application.routes.draw do
 
   resources :users
   resources :resume
-  
-end
 
+end
