@@ -1,0 +1,17 @@
+<%= render "layouts/header" %>
+
+<div id="homepage-cont" class="container">
+	<div id="homepage-title">
+		<h1>Resumate</h1>
+	</div>
+	<div>
+		<p>Welcome to Resumate!</p>
+		<p>Get started:</p>
+	</div>
+	<div id="homepage-buttons">
+		<%= link_to "Signup", users_new_path, class: 'init-buttons', id: 'Signup' %>
+		<%= link_to "Login", users_new_path, class: 'init-buttons', id: 'Login' %>
+	</div>
+</div>
+
+<%= render "layouts/footer" %>
