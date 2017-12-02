@@ -1,0 +1,14 @@
+<% if @resume.blank? %>
+<% puts @resume%>
+<p>There are not any resume currently in the system.</p>
+<% else %>
+<p>These are the current resumes in our system</p>
+
+<ul id = "list-of-resumes">
+   <% @resumes.each do |resume| %>
+   <li><%= link_to resume.id, {:action => 'show', :id => c.id} -%></li>
+   <% end %>
+</ul>
+
+<% end %>
+<p><%= link_to "Add new resume", {:action => 'new' }%></p>

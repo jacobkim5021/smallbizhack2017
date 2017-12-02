@@ -5,7 +5,7 @@ class ResumeController < ApplicationController
   end
 
   def show
-    @resumes = Resume.find(params[:id])
+    @resumes = Resume.find(params[:name])
   end
 
   def new
@@ -22,7 +22,7 @@ class ResumeController < ApplicationController
   end
 
   def resume_params
-    params.require(:resume).permit(:pdf,:id)
+    params.require(:resume).permit(:pdf,:name,:id)
   end
 
   def delete

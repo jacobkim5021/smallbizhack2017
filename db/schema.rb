@@ -12,11 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20171202192600) do
 
+
   create_table "resumes", force: :cascade do |t|
     t.text "content"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["user_id", "created_at"], name: "index_resumes_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_resumes_on_user_id"
   end
