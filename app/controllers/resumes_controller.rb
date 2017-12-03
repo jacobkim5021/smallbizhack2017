@@ -11,7 +11,8 @@ class ResumesController < ApplicationController
   def create
     @resume = Resume.new(resume_params)
     if @resume.save
-      redirect_to resumes_path, notice: "The resume #{@resume.name} has been uploaded."
+      flash[:success] = "The resume #{@resume.name} has been uploaded."
+      redirect_to resumes_path
     else
       flash[:danger] = "Resume could not be uploaded"
       render "new"
