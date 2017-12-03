@@ -13,6 +13,7 @@ class User < ApplicationRecord
                        allow_nil: true
 
   has_many :resumes
+  attr_accessor :resume_data
 
   class << self
     # Returns the hash digest of the given string.

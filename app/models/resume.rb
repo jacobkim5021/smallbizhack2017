@@ -1,4 +1,4 @@
 class Resume < ApplicationRecord
-  belongs_to :user
-  validates :content, presence: true
+  validates :attachment, presence: true
+  mount_uploader :attachment, AttachmentUploader
 end
