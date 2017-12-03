@@ -1,0 +1,12 @@
+<h1>Submit your resume</h1>
+
+<%= form_tag :action => 'create' do %>
+<p><label for = "resume_name">Resume Name</label>:
+<%= text_field 'resume', 'name' %></p>
+<p><label for = "resume_content">Content</label>:
+<%= text_field 'resume', 'content' %></p>
+<p><label for = "resume_id">user_id</label>:
+<%= text_field 'resume', 'user_id' %></p>
+<%= submit_tag "Create" %>
+
+<% end -%>

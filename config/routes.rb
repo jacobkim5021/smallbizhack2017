@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get    '/contact', to: 'static_pages#contact'
 
   resources :users
-  resources :resume
+  resources :resumes
 
 end

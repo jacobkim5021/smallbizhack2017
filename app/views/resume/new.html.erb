@@ -1,9 +1,0 @@
-<h1>Submit your resume</h1>
-
-<%= form_tag :action => 'create' do %>
-<p><label for = "resume_title">Title</label>:
-<%= text_field 'resume', 'name' %></p>
-<%= submit_tag "Create" %>
-
-<% end -%>
-<%= link_to 'Back', {:action => 'list'} %>
