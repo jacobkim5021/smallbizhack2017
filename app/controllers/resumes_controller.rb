@@ -5,21 +5,27 @@ class ResumesController < ApplicationController
   end
 
   def new
-    @resumes = Resume.new
+    @resume = Resume.new
   end
 
   def create
-    @resumes = Resume.new(resume_params)
-    if @resumes.save
-      flash[:success] = "Resume successfully uploaded"
-      redirect_to :action => 'list'
+    @resume = Resume.new(resume_params)
+    if @resume.save
+      redirect_to resumes_path, notice: "The resume #{@resume.name} has been uploaded."
     else
       flash[:danger] = "Resume could not be uploaded"
-      render :action => 'new'
+      render "new"
     end
   end
 
-  def resume_params
-    params.require(:resume).permit(:content,:name,:user_id)
+  def destroy
+    @resume = Resume.find(params[:id])
+    @resume.destroy
+    redirect_to resumes_path, notice:  "The resume #{@resume.name} has been deleted."
   end
+
+  private
+    def resume_params
+      params.require(:resume).permit(:name, :user_id, :attachment)
+    end
 end
